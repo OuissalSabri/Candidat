@@ -1,0 +1,33 @@
+.slds-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.slds-table thead {
+    background-color: #f4f6f9;
+}
+
+.slds-table th, .slds-table td {
+    padding: 0.75rem;
+    text-align: left;
+} 
+
+.slds-table th {
+    font-weight: bold;
+    color: #16325c;
+}
+
+.slds-table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.slds-table tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+.slds-truncate {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

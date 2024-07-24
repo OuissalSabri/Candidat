@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Candidats liés à l'offre d'emploi" icon-name="custom:custom63">
+        <template if:true={candidates}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Nom">Nom</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Téléphone">Téléphone</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Statut">Statut</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={candidates} for:item="candidat">
+                        <tr key={candidat.candidateId}>
+                            <td>
+                                <a data-id={candidat.candidateId} onclick={handleCandidatClick}>{candidat.candidateName}</a>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={candidat.candidateEmail}>{candidat.candidateEmail}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={candidat.candidatePhone}>{candidat.candidatePhone}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={candidat.candidateStatut}>{candidat.candidateStatut}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>
